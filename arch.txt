@@ -1,0 +1,28 @@
+                  ┌────────────────────────────┐
+                  │  Network Nodes (Blockchain)│
+                  └───────────┬────────────────┘
+                              │
+                      Consensus Layer (Go)
+            ┌──────────────────────────────────────┐
+            │ Consensus Manager                     │
+            │ - Tracks node votes                   │
+            │ - Validates blocks                    │
+            │ - Executes consensus algorithm        │
+            │   (PoS, PBFT, Raft, etc.)              │
+            └───────────┬───────────────────────────┘
+                        │
+              Threat Detection Layer (Python)
+     ┌─────────────────────────────────────────────────┐
+     │ ML Threat Model                                 │
+     │ - Monitors transaction patterns                 │
+     │ - Detects Sybil attacks, double spends, etc.    │
+     │ - Predicts malicious node behavior              │
+     └────────────────────┬────────────────────────────┘
+                           │
+             Adaptive Consensus Controller
+         ┌───────────────────────────────────┐
+         │ Sends instructions to Go layer:   │
+         │ - Change consensus parameters     │
+         │ - Temporarily isolate bad nodes   │
+         │ - Trigger metamorphic shift       │
+         └───────────────────────────────────┘
