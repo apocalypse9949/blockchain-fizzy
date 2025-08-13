@@ -222,4 +222,69 @@ record ModeChanged
 - Lightweight ML model (Isolation Forest) embedded as an off-chain worker.
 - Dynamic committee sizing in BFT based on threat intensity.
 
+# Adaptive Consensus Protocol Flow
+
+---
+
+## Transaction Entry
+- Users submit transactions to the network as usual.
+- Transactions enter a pending pool.
+
+---
+
+## Normal Consensus
+- The blockchain operates with its default consensus (e.g., Multi-Weight PoS) under stable conditions.
+- Validator influence is determined by a combination of:
+  - Stake weight
+  - Reputation score
+  - Computational contribution
+  - Historical reliability
+
+---
+
+## Continuous Threat Monitoring
+- The Threat Detection Layer continuously analyzes:
+  - Unusual block times
+  - Vote inconsistencies
+  - Sudden validator concentration
+  - Double-spend attempts
+  - DDoS patterns
+- Detection methods may include:
+  - Statistical anomaly detection
+  - ML-based node behavior profiling
+  - Real-time network telemetry
+
+---
+
+## Trigger Event
+- If abnormal activity is detected:
+  - A **Threat Severity Score** is calculated.
+  - If the score crosses a threshold, **Adaptive Consensus Shifting** is triggered.
+
+---
+
+## Consensus Shape-Shift
+- The protocol switches to a more secure mode, for example:
+  - Multi-Weight PoS → Hybrid PoS + BFT
+- Validators’ weights are rebalanced:
+  - Suspicious nodes lose weight.
+  - Trusted nodes gain temporary influence.
+- If the attack vector suggests, a temporary Proof-of-Work shield can be applied for block finalization.
+
+---
+
+## Survivability Mode
+- Block times may slow down.
+- Confirmation requirements may increase.
+- Priority is on **Integrity over throughput**.
+
+---
+
+## Post-Threat Recovery
+- After stability returns:
+  - The system gradually reverts validator weights to normal.
+  - Default consensus resumes.
+  - Threat report is logged on-chain for audit and future model training.
+
+
 
