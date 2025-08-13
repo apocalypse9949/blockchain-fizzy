@@ -1,28 +1,73 @@
-                  ┌────────────────────────────┐
-                  │  Network Nodes (Blockchain)│
-                  └───────────┬────────────────┘
-                              │
-                      Consensus Layer (Go)
-            ┌──────────────────────────────────────┐
-            │ Consensus Manager                     │
-            │ - Tracks node votes                   │
-            │ - Validates blocks                    │
-            │ - Executes consensus algorithm        │
-            │   (PoS, PBFT, Raft, etc.)              │
-            └───────────┬───────────────────────────┘
-                        │
-              Threat Detection Layer (Python)
-     ┌─────────────────────────────────────────────────┐
-     │ ML Threat Model                                 │
-     │ - Monitors transaction patterns                 │
-     │ - Detects Sybil attacks, double spends, etc.    │
-     │ - Predicts malicious node behavior              │
-     └────────────────────┬────────────────────────────┘
-                           │
-             Adaptive Consensus Controller
-         ┌───────────────────────────────────┐
-         │ Sends instructions to Go layer:   │
-         │ - Change consensus parameters     │
-         │ - Temporarily isolate bad nodes   │
-         │ - Trigger metamorphic shift       │
-         └───────────────────────────────────┘
+Transaction Entry
+
+Users submit transactions to the network as usual.
+
+Transactions enter a pending pool.
+
+Normal Consensus
+
+The blockchain operates with its default consensus (e.g., Multi-Weight PoS) under stable conditions.
+
+Validator influence = combination of stake weight, reputation score, computational contribution, and historical reliability.
+
+Continuous Threat Monitoring
+
+The Threat Detection Layer continuously analyzes:
+
+Unusual block times
+
+Vote inconsistencies
+
+Sudden validator concentration
+
+Double-spend attempts
+
+DDoS patterns
+
+Detection methods may include:
+
+Statistical anomaly detection
+
+ML-based node behavior profiling
+
+Real-time network telemetry
+
+Trigger Event
+
+If abnormal activity is detected:
+
+A “Threat Severity Score” is calculated.
+
+If score crosses a threshold, Adaptive Consensus Shifting is triggered.
+
+Consensus Shape-Shift
+
+The protocol switches to a more secure mode:
+
+Example: Multi-Weight PoS → Hybrid PoS+BFT
+
+Validators’ weights are rebalanced:
+
+Suspicious nodes lose weight.
+
+Trusted nodes gain temporary influence.
+
+If attack vector suggests it, a temporary Proof-of-Work shield can be applied for block finalization.
+
+Survivability Mode
+
+Block times may slow down.
+
+Confirmation requirements may increase.
+
+Priority: Integrity over throughput.
+
+Post-Threat Recovery
+
+After stability returns:
+
+System gradually reverts weights to normal.
+
+Default consensus resumes.
+
+Threat report logged on-chain for audit and future model training
